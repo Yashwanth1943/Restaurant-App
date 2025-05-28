@@ -1,0 +1,250 @@
+.dish-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.dish-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.dish-card:last-child {
+  border-bottom: none; /* No border for the last item */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.dish-main-info {
+  display: flex;
+  gap: 15px;
+  flex: 1; /* Allows it to take available space */
+}
+
+.indicator {
+  width: 16px;
+  height: 16px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-top: 5px; /* Align with dish name */
+}
+
+.veg {
+  border-color: #008000; /* Green */
+}
+
+.non-veg {
+  border-color: #ff0000; /* Red */
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.veg-dot {
+  background-color: #008000;
+}
+
+.non-veg-dot {
+  background-color: #ff0000;
+}
+
+.dish-details {
+  flex: 1;
+}
+
+.dish-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.dish-price-currency {
+  font-size: 16px;
+  color: #555;
+  margin: 0 0 10px 0;
+}
+
+.dish-description {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+}
+
+.quantity-buttons-container {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  border-radius: 20px;
+  color: #fff;
+  padding: 5px 10px;
+  width: fit-content;
+}
+
+.quantity-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 10px;
+  outline: none;
+}
+
+.dish-count {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.not-available-text {
+  font-size: 14px;
+  color: #d9534f; /* Red for not available */
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.customization-msg {
+  font-size: 13px;
+  color: orange;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.dish-side-info {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-left: 20px; /* Space between dish details and image */
+}
+
+.calories {
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
+}
+
+.dish-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .dish-card {
+    flex-direction: row; /* Stack dish info and side info vertically */
+    align-items: center; /* Center items horizontally when stacked */
+    padding: 15px 10px; /* Reduced padding for smaller screens, with side padding */
+    gap: 15px; /* Smaller gap when stacking */
+  }
+
+  .dish-container {
+    width: 100%; /* Take full width when stacked */
+    justify-content: center; /* Center content within the container */
+    flex-wrap: wrap; /* Allow indicator and info to wrap if needed */
+    gap: 10px; /* Smaller gap on mobile */
+  }
+
+  /* Indicators */
+  .veg-indicator,
+  .nonveg-indicator {
+    margin-top: 0; /* Reset margin for better alignment */
+    margin-bottom: 5px; /* Space between indicator and content below */
+    width: 15px; /* Slightly smaller for mobile */
+    height: 15px;
+  }
+
+  .veg-dot,
+  .nonveg-dot {
+    width: 9px; /* Smaller dot for mobile */
+    height: 9px;
+  }
+
+  /* Dish Info Text Block */
+  .dish-info {
+    text-align: center; /* Center text content */
+    margin-bottom: 0; /* Reset margin */
+  }
+
+  .dish-name {
+    font-size: 1.1rem; /* Smaller, but still readable */
+    margin-bottom: 4px;
+  }
+
+  .dish-price {
+    font-size: 0.95rem; /* Smaller price */
+    margin-bottom: 6px;
+  }
+
+  .dish-description {
+    font-size: 0.85rem; /* Smaller description */
+    margin-bottom: 8px;
+    padding: 0 5px; /* Add slight horizontal padding to prevent text touching edges */
+  }
+
+  /* Quantity Buttons */
+  .buttons-container {
+    margin: 10px auto; /* Center buttons horizontally */
+    padding: 3px 10px; /* Slightly less padding */
+  }
+
+  .button {
+    font-size: 1.3rem; /* Slightly smaller +/- */
+    padding: 0 6px; /* Reduced padding */
+  }
+
+  .buttons-container p {
+    margin: 0 10px; /* Reduced space around number */
+    font-size: 0.95rem; /* Smaller count number */
+  }
+
+  /* Customization & Not Available Messages */
+  .customization-msg,
+  .not-available-text {
+    text-align: center;
+    margin-left: 0; /* Reset indent */
+    font-size: 0.8rem; /* Smaller text */
+    margin-top: 6px;
+  }
+
+  /* Dish Side (Calories & Image) */
+  .dish-side {
+    /* Matches JSX className="dish-side" */
+    width: 100%; /* Take full width when stacked */
+    align-items: center; /* Center calories and image */
+    margin-left: 0;
+    margin-top: 15px; /* More space between main content and side info */
+  }
+
+  .calories {
+    margin-right: 0; /* Remove horizontal margin */
+    margin-bottom: 8px; /* Add vertical margin */
+    font-size: 0.8rem; /* Smaller calories text */
+  }
+
+  .dish-img {
+    width: 80px; /* Slightly smaller image on mobile */
+    height: 80px;
+    border-radius: 8px; /* Slightly less rounded */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  }
+}

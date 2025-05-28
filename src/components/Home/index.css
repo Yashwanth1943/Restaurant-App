@@ -1,0 +1,51 @@
+/* --- Global Body Styles (from src/index.css if applicable) --- */
+/* ... */
+
+/* --- Loader and Failure Containers (no specific mobile changes needed here) --- */
+.loader-container,
+.failure-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  font-size: 22px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* --- Main Menu Content Container (The white card) --- */
+.menu-content-container {
+  padding: 25px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* --- No Dishes Message (no specific mobile changes needed here) --- */
+.no-dishes-msg {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  padding: 60px 0;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .menu-content-container {
+    margin: 10px; /* Smaller margin from screen edges */
+    padding: 18px; /* Adjusted padding */
+    border-radius: 8px; /* Keep some rounding, or set to 0 for full-width look */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Lighter shadow on mobile */
+    width: calc(100% - 20px); /* Ensure it takes full width minus margins */
+  }
+}
+
+/* Optional: Even smaller screens (e.g., iPhone SE) */
+@media (max-width: 480px) {
+  .menu-content-container {
+    margin: 8px;
+    padding: 15px;
+  }
+}
